@@ -53,7 +53,7 @@ class MotionDetection:
                 current_time = time.time()
                 if detected and current_time - self.last_message_time > 120:
                     try:
-                        self.messaging_api.send_message("Alert: Person detected!", phone_number)
+                        self.messaging_api.send_message("Alert: Motion detected!", phone_number)
                         self.last_message_time = current_time
 
                         _, image_bytes = cv2.imencode('.png', frame)
